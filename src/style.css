@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #222a1b;
+  color: #fff;
+}
+
+.pokedex {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.pokedex__title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.pokedex__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.pokemon-card {
+  --accent: #8e93b8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: #262940;
+  border-top: 5px solid var(--accent);
+  border-radius: 12px;
+  transition: transform 0.2s;
+}
+
+.pokemon-card:hover {
+  transform: translateY(-6px);
+}
+
+.pokemon-card__id {
+  align-self: flex-end;
+  color: #a3a7c2;
+  font-size: 0.85rem;
+}
+
+.pokemon-card__img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+}
+
+.pokemon-card__name {
+  margin: 0;
+}
+
+.pokemon-card__type {
+  padding: 0.2rem 0.8rem;
+  border-radius: 999px;
+  background: var(--accent);
+  font-size: 0.8rem;
+}
+
+
+.pokemon-card[data-type="Planta"]    { --accent: #4caf50; }
+.pokemon-card[data-type="Fuego"]     { --accent: #ff7043; }
+.pokemon-card[data-type="Agua"]      { --accent: #42a5f5; }
+.pokemon-card[data-type="Eléctrico"] { --accent: #fbc02d; }
+.pokemon-card[data-type="Hada"]      { --accent: #f48fb1; }
+.pokemon-card[data-type="Normal"]    { --accent: #9e9d8f; }
+.pokemon-card[data-type="Fantasma"]  { --accent: #7e57c2; }
+.pokemon-card[data-type="Psíquico"]  { --accent: #ec407a; }
