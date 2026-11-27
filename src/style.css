@@ -75,3 +75,99 @@ body {
 .pokemon-card[data-type="Normal"]    { --accent: #9e9d8f; }
 .pokemon-card[data-type="Fantasma"]  { --accent: #7e57c2; }
 .pokemon-card[data-type="Psíquico"]  { --accent: #ec407a; }
+
+/* ---------- Filtro ---------- */
+
+.pokemon-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #262940;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.pokemon-filter__search,
+.pokemon-filter__select,
+.pokemon-filter__clear {
+  font: inherit;
+  color: #fff;
+  background: #1b1d2e;
+  border: 2px solid #3a3e5c;
+  border-radius: 999px;
+  padding: 0.6rem 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.pokemon-filter__search {
+  flex: 1 1 240px;
+  padding-left: 2.5rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='none' stroke='%23a3a7c2' stroke-width='2' stroke-linecap='round' viewBox='0 0 24 24'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.5-3.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 0.9rem center;
+}
+
+.pokemon-filter__search::placeholder {
+  color: #a3a7c2;
+}
+
+.pokemon-filter__select {
+  flex: 0 1 200px;
+  cursor: pointer;
+  appearance: none;
+  padding-right: 2.5rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none' stroke='%23a3a7c2' stroke-width='2.5' stroke-linecap='round' viewBox='0 0 24 24'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+}
+
+.pokemon-filter__select option {
+  background: #1b1d2e;
+}
+
+.pokemon-filter__search:focus,
+.pokemon-filter__select:focus {
+  outline: none;
+  border-color: #ef5350;
+  box-shadow: 0 0 0 3px rgba(239, 83, 80, 0.3);
+}
+
+.pokemon-filter__clear {
+  cursor: pointer;
+  font-weight: 600;
+  background: #ef5350;
+  border-color: #ef5350;
+}
+
+.pokemon-filter__clear:hover:not(:disabled) {
+  background: #d32f2f;
+  border-color: #d32f2f;
+}
+
+.pokemon-filter__clear:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.pokedex__count {
+  margin: 0 0 1rem;
+  color: #a3a7c2;
+  font-size: 0.9rem;
+}
+
+.pokedex__empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #a3a7c2;
+  border: 2px dashed #3a3e5c;
+  border-radius: 12px;
+}
+
+@media (max-width: 520px) {
+  .pokemon-filter__select,
+  .pokemon-filter__clear {
+    flex: 1 1 100%;
+  }
+}

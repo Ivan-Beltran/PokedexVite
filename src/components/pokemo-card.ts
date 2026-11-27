@@ -7,8 +7,8 @@ export const pokemonCard=(pokemon:Pokemon):HTMLElement=>{
 
     card.innerHTML=`
         <span class="pokemon-card__id">#${String(pokemon.id).padStart(3,"0")}</span>
-        <img class="pokemon-card__img" src="${pokemon.image}" alt="${pokemon.name} loading=lazy" />
-        <h3 class="pokemon-card_name">${pokemon.name}</h3>
+        <img class="pokemon-card__img" src="${pokemon.image}" alt="${pokemon.name}" loading="lazy" />
+        <h3 class="pokemon-card__name">${pokemon.name}</h3>
         <span class="pokemon-card__type">${pokemon.type}</span>
         
     `
